@@ -1,7 +1,7 @@
 {
   "name": "unplugin-eslint",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "packageManager": "pnpm@8.6.12",
   "description": "A universal bundler plugin to lint entry points and all imported files with ESLint.",
   "license": "MIT",

@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.1.0",
   "packageManager": "pnpm@8.6.12",
-  "description": "",
+  "description": "A universal bundler plugin to lint entry points and all imported files with ESLint.",
   "license": "MIT",
   "homepage": "https://github.com/wzc520pyfm/unplugin-eslint#readme",
   "repository": {

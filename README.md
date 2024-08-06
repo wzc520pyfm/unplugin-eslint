@@ -1,18 +1,18 @@
-# unplugin-starter
+# unplugin-eslint
 
-[![NPM version](https://img.shields.io/npm/v/unplugin-starter?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-starter)
+[![NPM version](https://img.shields.io/npm/v/unplugin-eslint?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-eslint)
 
-Starter template for [unplugin](https://github.com/unjs/unplugin).
+🍣 A universal bundler plugin to lint entry points and all imported files with ESLint.
 
 ## Template Usage
 
 To use this template, clone it down using:
 
 ```bash
-npx degit unplugin/unplugin-starter my-unplugin
+npx degit unplugin/unplugin-eslint my-unplugin
 ```
 
-And do a global replacement of `unplugin-starter` with your plugin name.
+And do a global replacement of `unplugin-eslint` with your plugin name.
 
 Then you can start developing your unplugin 🔥
 
@@ -22,7 +22,7 @@ To release a new version, run: `pnpm run release`
 ## Install
 
 ```bash
-npm i unplugin-starter
+npm i --save-dev unplugin-eslint
 ```
 
 <details>
@@ -30,11 +30,13 @@ npm i unplugin-starter
 
 ```ts
 // vite.config.ts
-import Starter from 'unplugin-starter/vite'
+import UnpluginEslint from 'unplugin-eslint/vite'
 
 export default defineConfig({
   plugins: [
-    Starter({ /* options */ }),
+    UnpluginEslint({
+      /* options */
+    }),
   ],
 })
 ```
@@ -48,17 +50,18 @@ Example: [`playground/`](./playground/)
 
 ```ts
 // rollup.config.js
-import Starter from 'unplugin-starter/rollup'
+import UnpluginEslint from 'unplugin-eslint/rollup'
 
 export default {
   plugins: [
-    Starter({ /* options */ }),
+    UnpluginEslint({
+      /* options */
+    }),
   ],
 }
 ```
 
 <br></details>
-
 
 <details>
 <summary>Webpack</summary><br>
@@ -68,8 +71,10 @@ export default {
 module.exports = {
   /* ... */
   plugins: [
-    require('unplugin-starter/webpack')({ /* options */ })
-  ]
+    require('unplugin-eslint/webpack')({
+      /* options */
+    }),
+  ],
 }
 ```
 
@@ -82,7 +87,12 @@ module.exports = {
 // nuxt.config.js
 export default defineNuxtConfig({
   modules: [
-    ['unplugin-starter/nuxt', { /* options */ }],
+    [
+      'unplugin-eslint/nuxt',
+      {
+        /* options */
+      },
+    ],
   ],
 })
 ```
@@ -99,7 +109,9 @@ export default defineNuxtConfig({
 module.exports = {
   configureWebpack: {
     plugins: [
-      require('unplugin-starter/webpack')({ /* options */ }),
+      require('unplugin-eslint/webpack')({
+        /* options */
+      }),
     ],
   },
 }
@@ -113,11 +125,19 @@ module.exports = {
 ```ts
 // esbuild.config.js
 import { build } from 'esbuild'
-import Starter from 'unplugin-starter/esbuild'
+import UnpluginEslint from 'unplugin-eslint/esbuild'
 
 build({
-  plugins: [Starter()],
+  plugins: [UnpluginEslint()],
 })
 ```
 
 <br></details>
+
+## Usage
+
+### Options
+
+For all options please refer to [docs](https://github.com/rollup/plugins/tree/master/packages/eslint#options).
+
+This plugin accepts all [@rollup/plugin-eslint](https://github.com/rollup/plugins/tree/master/packages/eslint#options) options.
